@@ -1,5 +1,5 @@
 // API key. Replace with your API key
-const APIKEY = 'f2f85762267ef18d0df71e18ec9f3737';
+const APIKEY = 'ed7a4f11dea7dc1b5a670469af10b79a';
 // City
 const city = 'Spokane';
 // Units for Farenheit
@@ -21,9 +21,8 @@ fetch(url)
   
   // Template to output
   const template = `
-    <h1>Weather</h1>
-    <data value="${data.name}" class="city">${data.name}</data>
-    <data value="${data.main.temp}" class="temp">${data.main.temp}&#8457;</data>
+    <section class="info"><data value="${data.name}" class="city">${data.name}</data>
+    <data value="${data.main.temp}" class="temp">${data.main.temp}&#8457;</data></section>
     <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Placeholder">
   `;
   
