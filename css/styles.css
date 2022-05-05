@@ -1,3 +1,7 @@
+@import url('chubbo.css');
+@import url('bonny.css');
+@import url('rowan.css');
+
 /* Grid */
 .layout {
 	display: grid;
@@ -5,6 +9,7 @@
 	grid-template-rows: 2fr 1fr 4fr 3fr;
 	width: 500px;
 	height: 100vh;
+	background-color: #660000;
 }
 @media only screen and (max-width: 500px) {
   .layout {
@@ -14,8 +19,9 @@
 
 /* Widgets */
 section {
-  background: lightgray;
-  padding: 1em;
+	background: #f6b76f;
+	margin: 5px 15px 5px 15px;
+	border-radius: 15px;
   
   /* Relative Parent. Absolute Child */
   position: relative;
@@ -27,19 +33,24 @@ section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-family: "Chubbo-Regular";
+	font-size: 3em;
 }
 
 .hours {
+	color: #000000;
 }
 
 .minutes {
+	color: #0d0d0d;
 }
 
 .seconds {
+	color: #1a1a1a;
 }
 
 .amOrPM {
-  
+	color: #262626;
 }
 
 /* Date */
@@ -48,6 +59,7 @@ section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-family: "Rowan-Regular";
 }
 
 .month {
@@ -63,31 +75,46 @@ section {
 }
 
 /* Weather */
-.hold {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .weather {
 	grid-area: 3 / 1 / 4 / 2;
 	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 2fr 1fr;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	justify-items: center;
+	align-items: center;
 }
 
-.info{
-	grid-area: 2 / 1 / 3 / 2;
+.locale {
+	font-size: 1.2em;
 }
 
 .city {
-	
+	font-family: "Rowan-Regular";
 }
 
-.temp {
-	
+.temp1 {
+	font-size: 2.5em;
+}
+
+.weathersub {
+	font-family: "Rowan-Regular";
 }
 
 .weather img {
+	grid-area: 1 / 1 / 2 / 3;
+}
+
+.otherinfo {
+	grid-area: 4 / 1 / 5 / 2;
+	padding: 10px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 10px;
+}
+.left {
 	grid-area: 1 / 1 / 2 / 2;
+}
+.right {
+	grid-area: 1 / 2 / 2 / 3;
 }

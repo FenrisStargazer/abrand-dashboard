@@ -10,3 +10,4 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
 https://cssgrid-generator.netlify.app/
 https://favicon.io/
+https://www.fontshare.com/
