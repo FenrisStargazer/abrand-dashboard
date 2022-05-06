@@ -38,6 +38,15 @@ fetch(url)
 				win > 303.75 && win < 326.25 ? "NW" :
 				win > 326.25 && win < 348.75 ? "NNW" :
 				"ERR";
+  const sunup = data.sys.sunrise;
+  const dateobj1 = new Date(sunup * 1000);
+  const hold1 = dateobj1.toUTCString();
+  const timeup = hold1.slice(-12, -7);
+  
+  const sundown = data.sys.sunset;
+  const dateobj2 = new Date(sundown * 1000);
+  const hold2 = dateobj2.toUTCString();
+  const timedown = hold2.slice(-12, -7);
   
   // Template to output
   const template = `
@@ -59,7 +68,8 @@ fetch(url)
 	<section class="left">
 		<data value="${data.weather[0].main}" class="oth"><strong>Weather:</strong> ${data.weather[0].main}, ${data.weather[0].description}</data><br><br>
 		<data value="${data.wind.speed}" class="oth"><strong>Wind:</strong> ${data.wind.speed} mph, ${windir}</data><br><br>
-		<data value="${data.sys.sunrise}" class="oth"><strong>Sunrise:</strong> ${data.sys.sunrise}%</data>
+		<data value="${data.sys.sunrise}" class="oth"><strong>Sunrise:</strong> ${timeup}</data><br>
+		<data value="${data.sys.sunset}" class="oth"><strong>Sunset:</strong> ${timedown}</data>
 	</section>
 	<section class="right">
 		<data value="${data.main.temp_min}" class="oth"><strong>Daily Low:</strong> ${data.main.temp_min}&#8457;</data><br>
